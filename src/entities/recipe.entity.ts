@@ -9,32 +9,32 @@ import {
 } from "typeorm";
 import { Administrator } from "./administrator.entity";
 import { Category } from "./category.entity";
-import { RecipeImage } from "./recipeImage.entity";
-import { RecipeIngredient } from "./recipeIngredient.entity";
+import { RecipeImage } from "./recipe-image.entity";
+import { RecipeIngredient } from "./recipe-ingredient.entity";
 
 @Index("fk_recipe_category_id", ["categoryId"], {})
 @Index("fk_recipe_administrator_id", ["administratorId"], {})
-@Entity("recipe")
+@Entity()
 export class Recipe {
   @PrimaryGeneratedColumn({ type: "int", name: "recipe_id", unsigned: true })
   recipeId: number;
 
-  @Column("varchar", { name: "name", length: 128 })
+  @Column({ type:"varchar",  length: 128 })
   name: string;
 
-  @Column("int", { name: "category_id", unsigned: true })
+  @Column({ type:"int", name: "category_id", unsigned: true })
   categoryId: number;
 
-  @Column("int", { name: "administrator_id", unsigned: true })
+  @Column({ type:"int", name: "administrator_id", unsigned: true })
   administratorId: number;
 
-  @Column("timestamp", {
+  @Column({type:"timestamp",
     name: "created_at",
     default: () => "CURRENT_TIMESTAMP",
   })
   createdAt: Date;
 
-  @Column("tinytext", { name: "instructions" })
+  @Column({ type:"tinytext",  name: "instructions" })
   instructions: string;
 
   @ManyToOne(() => Administrator, (administrator) => administrator.recipes, {
@@ -56,9 +56,7 @@ export class Recipe {
   @OneToMany(() => RecipeImage, (recipeImage) => recipeImage.recipe)
   recipeImages: RecipeImage[];
 
-  @OneToMany(
-    () => RecipeIngredient,
-    (recipeIngredient) => recipeIngredient.recipe
-  )
+  @OneToMany(() => RecipeIngredient,
+    (recipeIngredient) => recipeIngredient.recipe)
   recipeIngredients: RecipeIngredient[];
 }

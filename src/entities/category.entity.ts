@@ -10,7 +10,7 @@ import { Recipe } from "./recipe.entity";
 @Index("uq_category_mage_path", ["imagePath"], { unique: true })
 @Index("uq_category_name", ["name"], { unique: true })
 @Index("fk_category_parent_category_id", ["parentCategoryId"], {})
-@Entity("category")
+@Entity()
 export class Category {
   @PrimaryGeneratedColumn({ type: "int", name: "category_id", unsigned: true })
   categoryId: number;

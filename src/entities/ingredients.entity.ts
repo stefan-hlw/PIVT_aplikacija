@@ -7,12 +7,12 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { IngredientCategory } from "./ingredientCategory.entity";
-import { RecipeIngredient } from "./recipeIngredient.entity";
+import { IngredientCategory } from "./ingredient-category.entity";
+import { RecipeIngredient } from "./recipe-ingredient.entity";
 
 @Index("uq_ingredients_name", ["name"], { unique: true })
 @Index("fk_igredients_ingredient_category_id", ["ingredientCategoryId"], {})
-@Entity("ingredients")
+@Entity()
 export class Ingredients {
   @PrimaryGeneratedColumn({
     type: "int",

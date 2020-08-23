@@ -8,7 +8,7 @@ import {
 import { Recipe } from "./recipe.entity";
 
 @Index("uq_administrator_username", ["username"], { unique: true })
-@Entity("administrator")
+@Entity()
 export class Administrator {
   @PrimaryGeneratedColumn({
     type: "int",
@@ -17,7 +17,7 @@ export class Administrator {
   })
   administratorId: number;
 
-  @Column("varchar", { unique: true, length: 32 })
+  @Column({ type: "varchar", unique: true, length: 32 })
   username: string;
 
   @Column("varchar", { name: "password_hash", length: 128 })

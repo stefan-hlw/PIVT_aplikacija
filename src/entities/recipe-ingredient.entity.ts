@@ -7,7 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Ingredients } from "./ingredients.entity";
-import { MeasuringUnit } from "./measuringUnit.entity";
+import { MeasuringUnit } from "./measuring-unit.entity";
 import { Recipe } from "./recipe.entity";
 
 @Index("fk_recipe_ingredient_recipe_id", ["recipeId"], {})

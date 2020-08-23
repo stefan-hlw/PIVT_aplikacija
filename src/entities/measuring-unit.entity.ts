@@ -5,7 +5,7 @@ import {
   OneToMany,
   PrimaryGeneratedColumn,
 } from "typeorm";
-import { RecipeIngredient } from "./recipeIngredient.entity";
+import { RecipeIngredient } from "./recipe-ingredient.entity";
 
 @Index("uq_measuring_unit_name", ["name"], { unique: true })
 @Entity("measuring_unit")

@@ -2,8 +2,16 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { DatabaseConfiguration } from '../config/database.configuration';
-import { Administrator } from '../entities/administrator.entity';
+import { Administrator } from './entities/administrator.entity';
 import { AdministratorService } from './services/administrator/administrator.service';
+import { Recipe } from './entities/recipe.entity';
+import { RecipeImage } from './entities/recipe-image.entity';
+import { RecipeIngredient } from './entities/recipe-ingredient.entity';
+import { User } from './entities/user.entity';
+import { Category } from './entities/category.entity';
+import { IngredientCategory } from './entities/ingredient-category.entity';
+import { Ingredients } from './entities/ingredients.entity';
+import { MeasuringUnit } from './entities/measuring-unit.entity';
 
 DatabaseConfiguration
 
@@ -16,9 +24,25 @@ DatabaseConfiguration
       username: DatabaseConfiguration.username,
       password: DatabaseConfiguration.password,
       database: DatabaseConfiguration.database,
-      entities: [ Administrator ]
+      entities: [ Administrator,
+        Recipe, 
+        RecipeImage, 
+        RecipeIngredient, 
+        User, 
+        Category, 
+        IngredientCategory, 
+        Ingredients,
+        MeasuringUnit ]
     }),
-    TypeOrmModule.forFeature([ Administrator ])
+    TypeOrmModule.forFeature([ Administrator, 
+      Recipe, 
+      RecipeImage, 
+      RecipeIngredient, 
+      User, 
+      Category, 
+      IngredientCategory, 
+      Ingredients,
+      MeasuringUnit])
   ],
   controllers: [AppController],
   providers: [AdministratorService],
