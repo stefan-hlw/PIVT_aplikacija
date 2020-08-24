@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
+import { AppController } from './controllers/app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { DatabaseConfiguration } from '../config/database.configuration';
 import { Administrator } from './entities/administrator.entity';
@@ -12,6 +12,7 @@ import { Category } from './entities/category.entity';
 import { IngredientCategory } from './entities/ingredient-category.entity';
 import { Ingredients } from './entities/ingredients.entity';
 import { MeasuringUnit } from './entities/measuring-unit.entity';
+import { AdministratorController } from './controllers/api/administrator.controller';
 
 DatabaseConfiguration
 
@@ -44,7 +45,8 @@ DatabaseConfiguration
       Ingredients,
       MeasuringUnit])
   ],
-  controllers: [AppController],
+  controllers: [AppController,
+                AdministratorController],
   providers: [AdministratorService],
 })
 export class AppModule {}
