@@ -10,7 +10,6 @@ import { RecipeIngredient } from './entities/recipe-ingredient.entity';
 import { Category } from './entities/category.entity';
 import { IngredientCategory } from './entities/ingredient-category.entity';
 import { Ingredients } from './entities/ingredients.entity';
-import { MeasuringUnit } from './entities/measuring-unit.entity';
 import { AdministratorController } from './controllers/api/administrator.controller';
 import { CategoryService } from './services/category/category.service';
 import { CategoryController } from './controllers/api/category.controller';
@@ -20,8 +19,6 @@ import { RecipeService } from './services/recipe/recipe.service';
 import { RecipeController } from './controllers/api/recipe.controller';
 import { IngredientCategoryService } from './services/ingredient-category/ingredient-category.service';
 import { IngredientCategoryController } from './controllers/api/ingredient-category.controller';
-import { MeasuringUnitService } from './services/measuring-unit/measuring-unit.service';
-import { MeasuringUnitController } from './controllers/api/measuring-unit.controller';
 import { RecipeImageService } from './services/recipe-image/recipe-image.service';
 import { RecipeImageController } from './controllers/api/recipe-image-controller';
 import { RecipeIngredientService } from './services/recipe-ingredient/recipe-ingredient.service';
@@ -48,7 +45,7 @@ DatabaseConfiguration
         Category, 
         IngredientCategory, 
         Ingredients,
-        MeasuringUnit ]
+         ]
     }),
     TypeOrmModule.forFeature([ Administrator, 
       Recipe, 
@@ -57,7 +54,7 @@ DatabaseConfiguration
       Category, 
       IngredientCategory, 
       Ingredients,
-      MeasuringUnit])
+      ])
   ],
   controllers: [AppController,
                 AdministratorController,
@@ -65,7 +62,6 @@ DatabaseConfiguration
                 IngredientsController,
                 RecipeController,
                 IngredientCategoryController,
-                MeasuringUnitController,
                 RecipeImageController,
                 RecipeIngredientController],
   providers: [AdministratorService,
@@ -73,7 +69,6 @@ DatabaseConfiguration
               IngredientsService,
               RecipeService,
               IngredientCategoryService,
-              MeasuringUnitService,
               RecipeImageService,
               RecipeIngredientService],
 })

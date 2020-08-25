@@ -1,7 +1,8 @@
-import { Controller } from "@nestjs/common";
+import { Controller, Post, Body } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { Recipe } from "src/entities/recipe.entity";
 import { RecipeService } from "src/services/recipe/recipe.service";
+import { AddRecipeDto } from "src/dtos/recipe/add.recipe.dto";
 
 @Controller('api/recipe')
 @Crud({
@@ -30,4 +31,9 @@ import { RecipeService } from "src/services/recipe/recipe.service";
 })
 export class RecipeController {
     constructor(public service: RecipeService) {}
+
+    @Post('createFull')    
+    createFullRecipe(@Body() data: AddRecipeDto) {
+        return this.service.createFullRecipe(data);
+    }
 }
