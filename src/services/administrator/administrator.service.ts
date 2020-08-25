@@ -7,6 +7,7 @@ import { EditAdministratorDto } from 'src/dtos/administrator/edit.administrator.
 import { promises } from 'fs';
 import { response } from 'express';
 import { ApiResponse } from 'src/misc/api.response.class';
+import * as crypto from 'crypto';
 
 
 @Injectable()

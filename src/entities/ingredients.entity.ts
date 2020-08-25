@@ -6,9 +6,12 @@ import {
   ManyToOne,
   OneToMany,
   PrimaryGeneratedColumn,
+  ManyToMany,
+  JoinTable,
 } from "typeorm";
 import { IngredientCategory } from "./ingredient-category.entity";
 import { RecipeIngredient } from "./recipe-ingredient.entity";
+import { Recipe } from "./recipe.entity";
 
 @Index("uq_ingredients_name", ["name"], { unique: true })
 @Index("fk_igredients_ingredient_category_id", ["ingredientCategoryId"], {})
@@ -45,4 +48,13 @@ export class Ingredients {
     (recipeIngredient) => recipeIngredient.ingredient
   )
   recipeIngredients: RecipeIngredient[];
+
+
+  @ManyToMany(type => Recipe, recipe => recipe.ingredients)
+  @JoinTable({
+	name: "ingredient_recipe",
+	joinColumn: { name: "ingredient_id", referencedColumnName: "ingredientId" },
+	inverseJoinColumn: { name: "recipe_id", referencedColumnName: "recipeId" }
+  })
+  recipe: Recipe[];
 }

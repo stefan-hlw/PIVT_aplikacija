@@ -13,6 +13,12 @@ import { IngredientCategory } from './entities/ingredient-category.entity';
 import { Ingredients } from './entities/ingredients.entity';
 import { MeasuringUnit } from './entities/measuring-unit.entity';
 import { AdministratorController } from './controllers/api/administrator.controller';
+import { CategoryService } from './services/category/category.service';
+import { CategoryController } from './controllers/api/category.controller';
+import { IngredientsService } from './services/ingredients/ingredients.service';
+import { IngredientsController } from './controllers/api/ingredients.controller';
+import { RecipeService } from './services/recipe/recipe.service';
+import { RecipeController } from './controllers/api/recipe.controller';
 
 DatabaseConfiguration
 
@@ -46,7 +52,13 @@ DatabaseConfiguration
       MeasuringUnit])
   ],
   controllers: [AppController,
-                AdministratorController],
-  providers: [AdministratorService],
+                AdministratorController,
+                CategoryController,
+                IngredientsController,
+                RecipeController],
+  providers: [AdministratorService,
+              CategoryService,
+              IngredientsService,
+              RecipeService],
 })
 export class AppModule {}

@@ -4,12 +4,14 @@ import {
   Index,
   OneToMany,
   PrimaryGeneratedColumn,
+  ManyToOne,
+  JoinColumn,
 } from "typeorm";
 import { Recipe } from "./recipe.entity";
 
+@Index("fk_category_parent_category_id", ["parentCategoryId"], {})
 @Index("uq_category_mage_path", ["imagePath"], { unique: true })
 @Index("uq_category_name", ["name"], { unique: true })
-@Index("fk_category_parent_category_id", ["parentCategoryId"], {})
 @Entity()
 export class Category {
   @PrimaryGeneratedColumn({ type: "int", name: "category_id", unsigned: true })
@@ -26,4 +28,18 @@ export class Category {
 
   @OneToMany(() => Recipe, (recipe) => recipe.category)
   recipes: Recipe[];
+
+  @ManyToOne(() => Category, (category) => category.categories, {
+    onDelete: "NO ACTION",
+    onUpdate: "CASCADE",
+  })
+  @JoinColumn([
+    { name: "parent_category_id", referencedColumnName: "categoryId" },
+  ])
+  parentCategory: Category;
+
+  @OneToMany(() => Category, (category) => category.parentCategory)
+  categories: Category[];
 }
+
+
