@@ -7,7 +7,6 @@ import { AdministratorService } from './services/administrator/administrator.ser
 import { Recipe } from './entities/recipe.entity';
 import { RecipeImage } from './entities/recipe-image.entity';
 import { RecipeIngredient } from './entities/recipe-ingredient.entity';
-import { User } from './entities/user.entity';
 import { Category } from './entities/category.entity';
 import { IngredientCategory } from './entities/ingredient-category.entity';
 import { Ingredients } from './entities/ingredients.entity';
@@ -19,6 +18,17 @@ import { IngredientsService } from './services/ingredients/ingredients.service';
 import { IngredientsController } from './controllers/api/ingredients.controller';
 import { RecipeService } from './services/recipe/recipe.service';
 import { RecipeController } from './controllers/api/recipe.controller';
+import { IngredientCategoryService } from './services/ingredient-category/ingredient-category.service';
+import { IngredientCategoryController } from './controllers/api/ingredient-category.controller';
+import { MeasuringUnitService } from './services/measuring-unit/measuring-unit.service';
+import { MeasuringUnitController } from './controllers/api/measuring-unit.controller';
+import { RecipeImageService } from './services/recipe-image/recipe-image.service';
+import { RecipeImageController } from './controllers/api/recipe-image-controller';
+import { RecipeIngredientService } from './services/recipe-ingredient/recipe-ingredient.service';
+import { RecipeIngredientController } from './controllers/api/recipe-ingredient.service';
+
+
+
 
 DatabaseConfiguration
 
@@ -35,7 +45,6 @@ DatabaseConfiguration
         Recipe, 
         RecipeImage, 
         RecipeIngredient, 
-        User, 
         Category, 
         IngredientCategory, 
         Ingredients,
@@ -45,7 +54,6 @@ DatabaseConfiguration
       Recipe, 
       RecipeImage, 
       RecipeIngredient, 
-      User, 
       Category, 
       IngredientCategory, 
       Ingredients,
@@ -55,10 +63,18 @@ DatabaseConfiguration
                 AdministratorController,
                 CategoryController,
                 IngredientsController,
-                RecipeController],
+                RecipeController,
+                IngredientCategoryController,
+                MeasuringUnitController,
+                RecipeImageController,
+                RecipeIngredientController],
   providers: [AdministratorService,
               CategoryService,
               IngredientsService,
-              RecipeService],
+              RecipeService,
+              IngredientCategoryService,
+              MeasuringUnitService,
+              RecipeImageService,
+              RecipeIngredientService],
 })
 export class AppModule {}

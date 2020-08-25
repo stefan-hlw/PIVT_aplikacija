@@ -4,8 +4,6 @@ import { Administrator } from './../../entities/administrator.entity';
 import { Repository } from 'typeorm';
 import { AddAdministratorDto } from 'src/dtos/administrator/add.administrator.dto';
 import { EditAdministratorDto } from 'src/dtos/administrator/edit.administrator.dto';
-import { promises } from 'fs';
-import { response } from 'express';
 import { ApiResponse } from 'src/misc/api.response.class';
 import * as crypto from 'crypto';
 
@@ -26,8 +24,7 @@ export class AdministratorService {
     }
 
     add(data: AddAdministratorDto): Promise<Administrator | ApiResponse> {
-        // storing new admin, converting password into hash
-        const crypto = require('crypto');
+        // storing new admin, converting password into hash 
         const passwordHash = crypto.createHash('sha512');
         passwordHash.update(data.password);
         const passwordHashString = passwordHash.digest('hex').toUpperCase();
@@ -53,14 +50,12 @@ export class AdministratorService {
                 resolve(new ApiResponse("error", -1002));
             })
         }
-
-        const crypto = require('crypto');
+        
         const passwordHash = crypto.createHash('sha512');
         passwordHash.update(data.password);
         const passwordHashString = passwordHash.digest('hex').toUpperCase();
         admin.passwordHash = passwordHashString;
 
         return this.administrator.save(admin);
-
     }
 }
