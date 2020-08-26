@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './controllers/app.controller';
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { DatabaseConfiguration } from '../config/database.configuration';
@@ -23,6 +23,8 @@ import { RecipeImageService } from './services/recipe-image/recipe-image.service
 import { RecipeImageController } from './controllers/api/recipe-image-controller';
 import { RecipeIngredientService } from './services/recipe-ingredient/recipe-ingredient.service';
 import { RecipeIngredientController } from './controllers/api/recipe-ingredient.service';
+import { AuthController } from './controllers/api/auth.controller';
+import { AuthMiddleware } from './middlewares/auth.middleware';
 
 
 
@@ -63,7 +65,8 @@ DatabaseConfiguration
                 RecipeController,
                 IngredientCategoryController,
                 RecipeImageController,
-                RecipeIngredientController],
+                RecipeIngredientController,
+                AuthController],
   providers: [AdministratorService,
               CategoryService,
               IngredientsService,
@@ -71,5 +74,17 @@ DatabaseConfiguration
               IngredientCategoryService,
               RecipeImageService,
               RecipeIngredientService],
+              exports: [
+                AdministratorService,
+              ]
 })
-export class AppModule {}
+  
+export class AppModule implements NestModule {
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(AuthMiddleware)
+      .exclude('auth/*')
+      .forRoutes('/api/*');
+  }
+
+}
