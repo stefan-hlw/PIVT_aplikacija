@@ -25,6 +25,7 @@ export class RecipeImage {
     onDelete: "NO ACTION",
     onUpdate: "CASCADE",
   })
+  
   @JoinColumn([{ name: "recipe_id", referencedColumnName: "recipeId" }])
   recipe: Recipe;
 }

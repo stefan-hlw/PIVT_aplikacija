@@ -20,9 +20,8 @@ import { RecipeController } from './controllers/api/recipe.controller';
 import { IngredientCategoryService } from './services/ingredient-category/ingredient-category.service';
 import { IngredientCategoryController } from './controllers/api/ingredient-category.controller';
 import { RecipeImageService } from './services/recipe-image/recipe-image.service';
-import { RecipeImageController } from './controllers/api/recipe-image-controller';
 import { RecipeIngredientService } from './services/recipe-ingredient/recipe-ingredient.service';
-import { RecipeIngredientController } from './controllers/api/recipe-ingredient.service';
+import { RecipeIngredientController } from './controllers/api/recipe-ingredient.controller';
 import { AuthController } from './controllers/api/auth.controller';
 import { AuthMiddleware } from './middlewares/auth.middleware';
 
@@ -64,7 +63,6 @@ DatabaseConfiguration
                 IngredientsController,
                 RecipeController,
                 IngredientCategoryController,
-                RecipeImageController,
                 RecipeIngredientController,
                 AuthController],
   providers: [AdministratorService,

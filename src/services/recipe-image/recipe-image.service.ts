@@ -12,4 +12,7 @@ export class RecipeImageService extends TypeOrmCrudService<RecipeImage> {
      ) {
          super(recipeImage);
      }
+     add(newPhoto: RecipeImage): Promise<RecipeImage> {
+         return this.recipeImage.save(newPhoto)
+     }
 }

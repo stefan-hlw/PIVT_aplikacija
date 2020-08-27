@@ -41,6 +41,7 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
                  // might need more work(?)
                  "category",
                  "ingredients",
+                 "recipeImages"
              ]
          })
      }
