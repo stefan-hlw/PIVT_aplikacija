@@ -52,7 +52,7 @@ export class RecipeController {
     @UseInterceptors(
         FileInterceptor('photo', {
            storage: diskStorage({
-               destination: StorageConfig.photoDestination,
+               destination: StorageConfig.photo.destination,
                filename: (req, file, callback) => {   // generates photo file name 
                     let original: string = file.originalname;
                     let normalized = original.replace(/\s+/g, '-');
@@ -94,7 +94,7 @@ export class RecipeController {
            },
            limits: {
                files: 1,
-               fileSize: StorageConfig.photoMaxFileSize,
+               fileSize: StorageConfig.photo.maxSize,
            },
         })
     )
@@ -126,8 +126,8 @@ export class RecipeController {
                 return new ApiResponse('error', -4002, 'Bad file content type!');
             }
             
-            await this.createThumb(photo);
-            await this.createSmallImage(photo);
+            await this.createResizedImage(photo, StorageConfig.photo.resize.thumb);
+            await this.createResizedImage(photo, StorageConfig.photo.resize.small);
 
         const newPhoto: RecipeImage = new RecipeImage();
         newPhoto.recipeId = recipeId;
@@ -141,41 +141,21 @@ export class RecipeController {
         return savedPhoto;
 
     }
-
-    async createThumb(photo) {
+    async createResizedImage(photo, resizeSettings) {
         const originalFilePath = photo.path;
         const fileName = photo.filename;
 
-        const destinationFilePath = StorageConfig.photoDestination + "thumb/" + fileName;
+        const destinationFilePath = 
+            StorageConfig.photo.destination +
+            resizeSettings.directory +
+            fileName;
 
         await sharp(originalFilePath)
             .resize({
                 fit: 'cover',
-                width: StorageConfig.photoThumbSize.width,
-                height: StorageConfig.photoThumbSize.height,
-                background: {
-                    r: 255, g: 255, b: 255, alpha: 0.0
-                }
+                width: resizeSettings.width,
+                height: resizeSettings.height,
             })
             .toFile(destinationFilePath);
+    };
     }
-
-    async createSmallImage(photo) {
-        const originalFilePath = photo.path;
-        const fileName = photo.filename;
-
-        const destinationFilePath = StorageConfig.photoDestination + "small/" + fileName;
-
-        await sharp(originalFilePath)
-            .resize({
-                fit: 'cover',
-                width: StorageConfig.photoSmallSize.width,
-                height: StorageConfig.photoSmallSize.height,
-                background: {
-                    r: 255, g: 255, b: 255, alpha: 0.0
-                }
-            })
-            .toFile(destinationFilePath);
-
-    }
-}
