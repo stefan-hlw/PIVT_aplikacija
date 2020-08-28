@@ -15,4 +15,8 @@ export class RecipeImageService extends TypeOrmCrudService<RecipeImage> {
      add(newPhoto: RecipeImage): Promise<RecipeImage> {
          return this.recipeImage.save(newPhoto)
      }
+
+     async deleteById(id: number) {
+         return await this.recipeImage.delete(id);
+     }
 }

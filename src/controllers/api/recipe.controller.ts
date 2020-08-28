@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { Recipe } from "src/entities/recipe.entity";
 import { RecipeService } from "src/services/recipe/recipe.service";
@@ -158,4 +158,31 @@ export class RecipeController {
             })
             .toFile(destinationFilePath);
     };
+
+    // http://localhost:3000/api/recipe/1/deletePhoto/45/
+    @Delete(':recipeId/deletePhoto/:photoId/') 
+    public async deletePhoto(
+        @Param('recipeId') recipeId: number,
+        @Param('photoId') photoId: number,
+    ) {
+        const photo = await this.recipeImageService.findOne({
+            recipeId: recipeId,
+            imgId: photoId
+        });
+        if(!photo) {
+            return new ApiResponse('error', -4004, 'Image not found');
+        }
+        try {
+             fs.unlinkSync(StorageConfig.photo.destination + photo.imagePath);
+             fs.unlinkSync(StorageConfig.photo.destination + StorageConfig.photo.resize.thumb.directory + photo.imagePath);
+             fs.unlinkSync(StorageConfig.photo.destination + StorageConfig.photo.resize.small.directory + photo.imagePath);
+       } catch (e) {}
+
+        const deleteResult = await this.recipeImageService.deleteById(photoId);
+
+        if(deleteResult.affected === 0 ) {
+            return new ApiResponse('error', -4004, 'Photo not found');
+        }
+        return new ApiResponse('ok', 0, 'One photo deleted!')
+    }
     }

@@ -3,7 +3,7 @@ import { Crud } from "@nestjsx/crud";
 import { Ingredients } from "src/entities/ingredients.entity";
 import { IngredientsService } from "src/services/ingredients/ingredients.service";
 
-@Controller('api/ingredients')
+@Controller('api/ingredients')      //  http://localhost:3000/api/ingredients/
 @Crud({
     model: {
         type: Ingredients
