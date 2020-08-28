@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete, Patch } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { Recipe } from "src/entities/recipe.entity";
 import { RecipeService } from "src/services/recipe/recipe.service";
@@ -13,6 +13,7 @@ import { request } from "express";
 import * as fileType from 'file-type';
 import * as fs from 'fs';
 import * as sharp from 'sharp';
+import { EditRecipeDto } from "src/dtos/recipe/edit.recipe.dto";
 
 @Controller('api/recipe')
 @Crud({
@@ -37,6 +38,9 @@ import * as sharp from 'sharp';
             
             
         }
+    },
+    routes: {
+        exclude: [ 'updateOneBase', 'replaceOneBase', 'deleteOneBase' ],
     }
 })
 export class RecipeController {
@@ -47,6 +51,12 @@ export class RecipeController {
     createFullRecipe(@Body() data: AddRecipeDto) {
         return this.service.createFullRecipe(data);
     }
+
+    @Patch(':id')
+    editFullRecipe(@Param('id') id:number, @Body() data: EditRecipeDto) {
+         return this.service.editFullRecipe(id, data);
+    }
+ 
 
     @Post('/:id/uploadPhoto/') // POST http://localhost:3000/api/recipe/:id/uploadPhoto/
     @UseInterceptors(
