@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { Recipe } from "src/entities/recipe.entity";
 import { RecipeService } from "src/services/recipe/recipe.service";
@@ -9,6 +9,7 @@ import { diskStorage } from "multer";
 import { RecipeImageService } from "src/services/recipe-image/recipe-image.service";
 import { RecipeImage } from "src/entities/recipe-image.entity";
 import { ApiResponse } from "src/misc/api.response.class";
+import { request } from "express";
 
 @Controller('api/recipe')
 @Crud({
@@ -74,28 +75,40 @@ export class RecipeController {
            fileFilter: (req, file, callback) => {
                // File extension check (.jpg and .png are valid)
                if (!file.originalname.match(/\.(jpg|png)$/)) {
-                   callback(new Error('Bad file extension!'), false);
+                   req.fileFilterError = 'Bad file extension!';
+                   callback(null, false);
                    return; 
                }
 
                // File content check (data type)
                if (!(file.mimetype.includes('jpeg') || file.mimetype.includes('png'))) {
-                callback(new Error('Bad file content!'), false);
+                req.fileFilterError = 'Bad file content!';
+                callback(null, false);
                 return;
                }
+               
                callback(null, true);
            },
            limits: {
                files: 1,
-               fieldSize: StorageConfig.photoMaxFileSize,
+               fileSize: StorageConfig.photoMaxFileSize,
            },
         })
     )
 
     // Recipe image upload 
-    async uploadPhoto(@Param('id') recipeId: number, @UploadedFile() photo): Promise<ApiResponse | RecipeImage> {
-        let imagePath = photo.filename;
+    async uploadPhoto(
+        @Param('id') recipeId: number, 
+        @UploadedFile() photo,
+        @Req() req
+        ): Promise<ApiResponse | RecipeImage> {
+            if (req.fileFilterError) {
+                return new ApiResponse('error', -4002, req.fileFilterError);
+            }
 
+            if (!photo) {
+                return new ApiResponse('error', -4002, 'File not uploaded');
+            }
         const newPhoto: RecipeImage = new RecipeImage();
         newPhoto.recipeId = recipeId;
         newPhoto.imagePath = photo.filename;
