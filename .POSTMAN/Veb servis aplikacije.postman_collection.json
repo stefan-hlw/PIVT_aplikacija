@@ -1,0 +1,2194 @@
+{
+	"info": {
+		"_postman_id": "707523de-70d0-4e78-a59f-0a6105baf3c2",
+		"name": "Veb servis aplikacije",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Administrator",
+			"item": [
+				{
+					"name": "Get all administrators",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all administrators",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"83-H7rMNDmz09BkAMwEDpU54D93ASU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Aug 2020 14:26:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"stefan\",\n        \"passwordHash\": \"stefan\"\n    },\n    {\n        \"administratorId\": 2,\n        \"username\": \"marko\",\n        \"passwordHash\": \"marko\"\n    }\n]"
+						},
+						{
+							"name": "Get all administrators - ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXh0IjoxNTk5NjU5NDEzLjI0NywiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5ODQ0OTgxM30.4s_UXwd3s-B3oFS1med6ZqpRYriSlnQ2vj9d2KvlMUY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1965"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7ad-SexM33nUfqYrI6esyTSyaNrSMCs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Aug 2020 14:41:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"stefan\",\n        \"passwordHash\": \"6E782182E95042C55622D2EE7D42373B0C7164EF9A82B40D8D1DD1BC0D61324EFB3FB05E526B8E32B434A65C578EEC6157E67A95FE858FC4E76A566E3110EB0D\"\n    },\n    {\n        \"administratorId\": 2,\n        \"username\": \"marko\",\n        \"passwordHash\": \"marko\"\n    },\n    {\n        \"administratorId\": 3,\n        \"username\": \"iilic\",\n        \"passwordHash\": \"41706B2FC7C3D9D8A31AFF5EDF087B96278B765A0C69A1C1E36C6D1391F3D5A59314EB6250152D1FC7E3E035923E2C909C7CA2E9273679701B7A1CBA2C571D9D\"\n    },\n    {\n        \"administratorId\": 21,\n        \"username\": \"petrovic\",\n        \"passwordHash\": \"41706B2FC7C3D9D8A31AFF5EDF087B96278B765A0C69A1C1E36C6D1391F3D5A59314EB6250152D1FC7E3E035923E2C909C7CA2E9273679701B7A1CBA2C571D9D\"\n    },\n    {\n        \"administratorId\": 22,\n        \"username\": \"cpetrovic\",\n        \"passwordHash\": \"41706B2FC7C3D9D8A31AFF5EDF087B96278B765A0C69A1C1E36C6D1391F3D5A59314EB6250152D1FC7E3E035923E2C909C7CA2E9273679701B7A1CBA2C571D9D\"\n    },\n    {\n        \"administratorId\": 23,\n        \"username\": \"lpetrovic\",\n        \"passwordHash\": \"41706B2FC7C3D9D8A31AFF5EDF087B96278B765A0C69A1C1E36C6D1391F3D5A59314EB6250152D1FC7E3E035923E2C909C7CA2E9273679701B7A1CBA2C571D9D\"\n    },\n    {\n        \"administratorId\": 24,\n        \"username\": \"wdatrovic\",\n        \"passwordHash\": \"41706B2FC7C3D9D8A31AFF5EDF087B96278B765A0C69A1C1E36C6D1391F3D5A59314EB6250152D1FC7E3E035923E2C909C7CA2E9273679701B7A1CBA2C571D9D\"\n    },\n    {\n        \"administratorId\": 25,\n        \"username\": \"dwaovic\",\n        \"passwordHash\": \"41706B2FC7C3D9D8A31AFF5EDF087B96278B765A0C69A1C1E36C6D1391F3D5A59314EB6250152D1FC7E3E035923E2C909C7CA2E9273679701B7A1CBA2C571D9D\"\n    },\n    {\n        \"administratorId\": 26,\n        \"username\": \"dfsdfsd\",\n        \"passwordHash\": \"41706B2FC7C3D9D8A31AFF5EDF087B96278B765A0C69A1C1E36C6D1391F3D5A59314EB6250152D1FC7E3E035923E2C909C7CA2E9273679701B7A1CBA2C571D9D\"\n    },\n    {\n        \"administratorId\": 30,\n        \"username\": \"StefanV\",\n        \"passwordHash\": \"0F69C2C8363FC30CA41A600EE4612872A67C67F6ED2A699DE2C43CA7DF34AB22A302526B311FF151BA3001FC9230E6AC592F66DC1D70F631BD0ED82D7C9732B0\"\n    },\n    {\n        \"administratorId\": 31,\n        \"username\": \"admin\",\n        \"passwordHash\": \"C7AD44CBAD762A5DA0A452F9E854FDC1E0E7A52A38015F23F3EAB1D80B931DD472634DFAC71CD34EBC35D16AB7FB8A90C81F975113D6C7538DC69DD8DE9077EC\"\n    }\n]"
+						},
+						{
+							"name": "Get all administrators",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "131"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"83-H7rMNDmz09BkAMwEDpU54D93ASU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Aug 2020 14:26:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"administratorId\": 1,\n        \"username\": \"stefan\",\n        \"passwordHash\": \"stefan\"\n    },\n    {\n        \"administratorId\": 2,\n        \"username\": \"marko\",\n        \"passwordHash\": \"marko\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get a single administrator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a single administrator",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-B9k2pK0s2CoaYgf7ZjuKRcE8O74\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Aug 2020 14:28:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 1,\n    \"username\": \"stefan\",\n    \"passwordHash\": \"stefan\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Add a new administrator",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"StefanVucan\",\r\n    \"password\": \"PassTest9977\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add a new administrator - error - username taken",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"dfsdfsd\",\r\n    \"password\": \"BigMistake4433\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										""
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-t4k/9UI9MQaVcBQ68YkMUdFYBok\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Aug 2020 14:54:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1001,\n    \"message\": null\n}"
+						},
+						{
+							"name": "Add a new administrator - Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"StefanV\",\r\n    \"password\": \"PassTest9977\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										""
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "189"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bd-WVj557M2kmfTuyZNrsLVWBiHEPI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Aug 2020 14:56:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"StefanV\",\n    \"passwordHash\": \"0F69C2C8363FC30CA41A600EE4612872A67C67F6ED2A699DE2C43CA7DF34AB22A302526B311FF151BA3001FC9230E6AC592F66DC1D70F631BD0ED82D7C9732B0\",\n    \"administratorId\": 30\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit an existing administrator",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"NewPassTest\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit an administrator - Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"NewPassTest\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"1"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "187"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bb-H3dqiIGF2bBTRd0XWXH/jcEhGWk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Aug 2020 14:58:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 1,\n    \"username\": \"stefan\",\n    \"passwordHash\": \"6E782182E95042C55622D2EE7D42373B0C7164EF9A82B40D8D1DD1BC0D61324EFB3FB05E526B8E32B434A65C578EEC6157E67A95FE858FC4E76A566E3110EB0D\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit a non-existing administrator",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\": \"Newpass231231321\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								"999"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit a non-existing administrator ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"Newpass231231321\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/999",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"999"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-TohoSz0THfgyH4V7rCdfcfXcq54\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Aug 2020 15:02:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1002,\n    \"message\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a single non-exisitng administrator",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/administrator/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"administrator",
+								"999"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a single non-exisitng administrator",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/administrator/999",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"administrator",
+										"999"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-TohoSz0THfgyH4V7rCdfcfXcq54\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 24 Aug 2020 15:06:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -1002,\n    \"message\": null\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTk5ODI5MzcwLjkzOSwiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI2LjMiLCJpYXQiOjE1OTg2MTk3NzB9.bh0UwfZObvvHruGcuwOvyOU_y5l5NdXSbOMfwqf4hDo",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bd486889-f904-402c-907e-c571e1a37c30",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c17ea82c-3994-42a8-b90d-1e59c05ad402",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Recipe",
+			"item": [
+				{
+					"name": "Create a new recipe",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Corba 2\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"instrukcije za pripremu\",\r\n    \"ingredients\": [\r\n        {\r\n        \"ingredientId\": 2,\r\n        \"amount\": \"16\" \r\n       } \r\n    ]\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/recipe/createFull",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipe",
+								"createFull"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "POST createFull - Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Gulas\",\r\n    \"categoryId\": 2,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"instrukcije za pripremu\",\r\n    \"ingredients\": [\r\n        {\r\n        \"ingredientId\": 1,\r\n        \"amount\": \"14 komada\" \r\n    } \r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/createFull",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"createFull"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "410"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19a-fhi3jSs9qH7FETY9CcPYL4gcEsQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 25 Aug 2020 20:00:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": 5,\n    \"name\": \"Gulas\",\n    \"categoryId\": 2,\n    \"administratorId\": 1,\n    \"createdAt\": \"2020-08-25T20:00:07.000Z\",\n    \"instructions\": \"instrukcije za pripremu\",\n    \"category\": {\n        \"categoryId\": 2,\n        \"imagePath\": \"https://coolinarika.azureedge.net/images/_variations/9/c/9c924e010ccaed50415e25c96877bb39_view_l.jpg?v=0\",\n        \"name\": \"CategoryTest\",\n        \"parentCategoryId\": 1\n    },\n    \"ingredients\": [\n        {\n            \"ingredientId\": 1,\n            \"name\": \"Carrot\",\n            \"ingredientCategoryId\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Upload recipe photo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/stefa/Desktop/sarma.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/recipe/1/uploadPhoto/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipe",
+								"1",
+								"uploadPhoto",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Upload recipe photo - Succesful upload",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/stefa/Desktop/sarma.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1/uploadPhoto/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1",
+										"uploadPhoto",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-56asMV2fc0EoPNu5MCv1h8dLRsY\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Aug 2020 18:07:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": \"1\",\n    \"imagePath\": \"2020827-6628915837-sarma.jpg\",\n    \"imgId\": 5\n}"
+						},
+						{
+							"name": "Upload recipe photo - Bad file extension",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": []
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1/uploadPhoto/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1",
+										"uploadPhoto",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "69"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"45-/1BctOZfI9HUiikyGHz7sO4T6hY\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 12:00:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -4002,\n    \"message\": \"Bad file extension!\"\n}"
+						},
+						{
+							"name": "Upload recipe photo - Succes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/stefa/Desktop/testpic.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1/uploadPhoto/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1",
+										"uploadPhoto",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "71"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47-Y13VY2uxcOEC7OUEiPI/iYkVuio\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Aug 2020 18:06:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": \"1\",\n    \"imagePath\": \"2020827-9544151536-testpic.png\",\n    \"imgId\": 4\n}"
+						},
+						{
+							"name": "Upload recipe photo - Error, File too large ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "photo",
+											"type": "file",
+											"src": "/C:/Users/stefa/Desktop/sarma.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1/uploadPhoto/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1",
+										"uploadPhoto",
+										""
+									]
+								}
+							},
+							"status": "Payload Too Large",
+							"code": 413,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "73"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"49-GtNRsf+DjNWCwgmuatBIerKYgxk\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 12:05:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 413,\n    \"message\": \"File too large\",\n    \"error\": \"Payload Too Large\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get a single recipe",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/recipe/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipe",
+								"1",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get a single recipe - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "359"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"167-ghtFAnEizkEAWP+w706+maosGMA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 27 Aug 2020 18:31:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": 1,\n    \"name\": \"Sarma\",\n    \"categoryId\": 6,\n    \"administratorId\": 30,\n    \"createdAt\": \"2020-08-24T19:43:55.000Z\",\n    \"instructions\": \"Skuvati sarmu kek\",\n    \"recipeImages\": [\n        {\n            \"imgId\": 5,\n            \"recipeId\": 1,\n            \"imagePath\": \"2020827-6628915837-sarma.jpg\"\n        }\n    ],\n    \"ingredients\": [\n        {\n            \"ingredientId\": 4,\n            \"name\": \"Onion\",\n            \"ingredientCategoryId\": 1\n        },\n        {\n            \"ingredientId\": 5,\n            \"name\": \"Garlic\",\n            \"ingredientCategoryId\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete a single recipe photo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/recipe/1/deletePhoto/16/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipe",
+								"1",
+								"deletePhoto",
+								"16",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete a single recipe photo - Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1/deletePhoto/16/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1",
+										"deletePhoto",
+										"16",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-EPvOlDLL44snnM4WQSDM7EsUZSQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 14:40:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"ok\",\n    \"statusCode\": 0,\n    \"message\": \"One photo deleted!\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit a single recipe without ingredients",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije\"\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/recipe/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipe",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit a single recipe without ingredients - Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "367"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16f-p6xewYWh7+6WRKjyKz508xKB9fo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 15:19:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": 1,\n    \"name\": \"SarmaEdit\",\n    \"categoryId\": 1,\n    \"administratorId\": 1,\n    \"createdAt\": \"2020-08-24T19:43:55.000Z\",\n    \"instructions\": \"Editovane instrukcije\",\n    \"recipeImages\": [\n        {\n            \"imgId\": 17,\n            \"recipeId\": 1,\n            \"imagePath\": \"2020828-3721521473-sarma.jpg\"\n        }\n    ],\n    \"ingredients\": [\n        {\n            \"ingredientId\": 4,\n            \"name\": \"Onion\",\n            \"ingredientCategoryId\": 1\n        },\n        {\n            \"ingredientId\": 5,\n            \"name\": \"Garlic\",\n            \"ingredientCategoryId\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit a single recipe with Ingredients",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije\",\r\n    \"ingredients\": [\r\n        {\r\n        \"ingredientId\": 2,\r\n        \"amount\": \"23\" \r\n       }\r\n\r\n    ]\r\n}\r\n"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/recipe/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipe",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit a single recipe without ingredients - Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije\"\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "367"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16f-p6xewYWh7+6WRKjyKz508xKB9fo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 15:19:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": 1,\n    \"name\": \"SarmaEdit\",\n    \"categoryId\": 1,\n    \"administratorId\": 1,\n    \"createdAt\": \"2020-08-24T19:43:55.000Z\",\n    \"instructions\": \"Editovane instrukcije\",\n    \"recipeImages\": [\n        {\n            \"imgId\": 17,\n            \"recipeId\": 1,\n            \"imagePath\": \"2020828-3721521473-sarma.jpg\"\n        }\n    ],\n    \"ingredients\": [\n        {\n            \"ingredientId\": 4,\n            \"name\": \"Onion\",\n            \"ingredientCategoryId\": 1\n        },\n        {\n            \"ingredientId\": 5,\n            \"name\": \"Garlic\",\n            \"ingredientCategoryId\": 1\n        }\n    ]\n}"
+						},
+						{
+							"name": "Edit a single recipe with Ingredients - Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije\",\r\n    \"ingredients\": [\r\n        {\r\n        \"ingredientId\": 2,\r\n        \"amount\": \"23\" \r\n       }\r\n\r\n    ]\r\n}\r\n"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "417"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a1-Ufjk3UD8nZIUZkEIkvNtf2vlusM\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 15:29:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"recipeId\": 1,\n    \"name\": \"SarmaEdit\",\n    \"categoryId\": 1,\n    \"administratorId\": 1,\n    \"createdAt\": \"2020-08-24T19:43:55.000Z\",\n    \"instructions\": \"Editovane instrukcije\",\n    \"category\": {\n        \"categoryId\": 1,\n        \"imagePath\": \"imgur.com\",\n        \"name\": \"CatTest\",\n        \"parentCategoryId\": null\n    },\n    \"recipeIngredients\": [\n        {\n            \"recipeIngredientId\": 13,\n            \"recipeId\": 1,\n            \"ingredientId\": 2,\n            \"amount\": \"23\"\n        }\n    ],\n    \"recipeImages\": [\n        {\n            \"imgId\": 17,\n            \"recipeId\": 1,\n            \"imagePath\": \"2020828-3721521473-sarma.jpg\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTk5ODM3NTQ0LjcyLCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNi4zIiwiaWF0IjoxNTk4NjI3OTQ0fQ.uT_f_3Vq78JTzv5EXTM5sMn33onnkWb3ZjcF6qt7H_M",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "de40eff9-4b94-4391-959a-2269af9174b3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8484eb33-a3a5-4144-8f78-627438779efe",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/login/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login - admin doesn't exist",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin1\",\r\n    \"password\": \"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-jVzHjGg0W81AgoBNOOnaoLkouLY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Aug 2020 13:53:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3001,\n    \"message\": null\n}"
+						},
+						{
+							"name": "Login - admin exists, wrong password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin1\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "52"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"34-yGnd1fUn+KRemOJUJKfIJoExxS4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Aug 2020 13:53:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -3002,\n    \"message\": null\n}"
+						},
+						{
+							"name": "Login - admin exists, correct password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "292"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"124-Y5VxsD/RgNV0c719sqT8dVQc4tQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Aug 2020 13:50:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 31,\n    \"username\": \"admin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXh0IjoxNTk5NjU5NDEzLjI0NywiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5ODQ0OTgxM30.4s_UXwd3s-B3oFS1med6ZqpRYriSlnQ2vj9d2KvlMUY\"\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXh0IjoxNTk5ODI4OTA1LjE2NywiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI2LjMiLCJpYXQiOjE1OTg2MTkzMDV9.Ntt6Gsxd5lN5TDyttHe1h7pd32vX9nuzcdj06nbykjw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b475db0d-4778-409e-938d-c1d706813fc1",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "9d7aec79-67e3-47fa-bc96-b8d3dd8c0b72",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Ingredients",
+			"item": [
+				{
+					"name": "Get all ingredients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/ingredients/1/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"1",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get all ingredients - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/ingredients/1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"ingredients",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "126"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7e-7iaJ4hcz738ZaKdGOnQvqYps3jo\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 13:36:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ingredientId\": 1,\n    \"name\": \"Carrot\",\n    \"ingredientCategoryId\": 1,\n    \"ingredientCategory\": {\n        \"ingredientCategoryId\": 1,\n        \"name\": \"Vegetable\"\n    }\n}"
+						},
+						{
+							"name": "Get all ingredients - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/ingredients/1/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"ingredients",
+										"1",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "626"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"272-DkuNkLSvBGSBXYTOHErOFtrE4p4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 13:35:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"ingredientId\": 1,\n        \"name\": \"Carrot\",\n        \"ingredientCategoryId\": 1,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 1,\n            \"name\": \"Vegetable\"\n        }\n    },\n    {\n        \"ingredientId\": 2,\n        \"name\": \"Apple\",\n        \"ingredientCategoryId\": 2,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 2,\n            \"name\": \"Fruit\"\n        }\n    },\n    {\n        \"ingredientId\": 3,\n        \"name\": \"Chicken\",\n        \"ingredientCategoryId\": 3,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 3,\n            \"name\": \"Meat\"\n        }\n    },\n    {\n        \"ingredientId\": 4,\n        \"name\": \"Onion\",\n        \"ingredientCategoryId\": 1,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 1,\n            \"name\": \"Vegetable\"\n        }\n    },\n    {\n        \"ingredientId\": 5,\n        \"name\": \"Garlic\",\n        \"ingredientCategoryId\": 1,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 1,\n            \"name\": \"Vegetable\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get one ingredient",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a new ingredient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Krastavac\",\r\n    \"ingredientCategoryId\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/ingredients/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add a new ingredient - Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Krastavac\",\r\n    \"ingredientCategoryId\": 1\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/ingredients/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"ingredients",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "129"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"81-qYtpJZDN3eo49si4u3WrJg9l/TA\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 13:42:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ingredientId\": 7,\n    \"name\": \"Krastavac\",\n    \"ingredientCategoryId\": 1,\n    \"ingredientCategory\": {\n        \"ingredientCategoryId\": 1,\n        \"name\": \"Vegetable\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Edit a single feature",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Celer\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/ingredients/6/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"6",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Edit a single feature - Success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Celer\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/ingredients/6/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"ingredients",
+										"6",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "125"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7d-rpiHQ7GcSEneCKXXA6RW10mFHf8\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 28 Aug 2020 13:44:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ingredientId\": 6,\n    \"name\": \"Celer\",\n    \"ingredientCategoryId\": 1,\n    \"ingredientCategory\": {\n        \"ingredientCategoryId\": 1,\n        \"name\": \"Vegetable\"\n    }\n}"
+						}
+					]
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTk5ODM3NTQ0LjcyLCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNi4zIiwiaWF0IjoxNTk4NjI3OTQ0fQ.uT_f_3Vq78JTzv5EXTM5sMn33onnkWb3ZjcF6qt7H_M",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "a80b3b7e-cb02-4e71-8131-ec9905c96045",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8eaf2625-d30e-4b59-b54d-4db201eaad66",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
