@@ -23,7 +23,7 @@ import { IngredientsService } from "src/services/ingredients/ingredients.service
             
             
         }
-    }
+    },
 })
 export class IngredientsController {
     constructor(public service: IngredientsService) {}
