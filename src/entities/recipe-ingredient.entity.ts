@@ -8,6 +8,7 @@ import {
 } from "typeorm";
 import { Ingredients } from "./ingredients.entity";
 import { Recipe } from "./recipe.entity";
+import * as Validator from 'class-validator';
 
 @Index("fk_recipe_ingredient_recipe_id", ["recipeId"], {})
 @Index("fk_recipe_ingredient_ingredient_id", ["ingredientId"], {})
@@ -28,6 +29,8 @@ export class RecipeIngredient {
   ingredientId: number;
 
   @Column("varchar", { name: "amount", length: 255 })
+  @Validator.IsNotEmpty()
+  @Validator.Length(1,255)
   amount: string;
 
   @ManyToOne(

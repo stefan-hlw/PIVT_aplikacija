@@ -14,6 +14,7 @@ import { Category } from "./category.entity";
 import { RecipeImage } from "./recipe-image.entity";
 import { RecipeIngredient } from "./recipe-ingredient.entity";
 import { Ingredients } from "./ingredients.entity";
+import * as Validator from 'class-validator';
 
 @Index("fk_recipe_category_id", ["categoryId"], {})
 @Index("fk_recipe_administrator_id", ["administratorId"], {})
@@ -23,6 +24,9 @@ export class Recipe {
   recipeId: number;
 
   @Column({ type:"varchar",  length: 128 })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(3, 128)
   name: string;
 
   @Column({ type:"int", name: "category_id", unsigned: true })
@@ -38,6 +42,9 @@ export class Recipe {
   createdAt: Date;
 
   @Column({ type:"tinytext",  name: "instructions" })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(16, 10000)
   instructions: string;
 
   @ManyToOne(() => Administrator, (administrator) => administrator.recipes, {

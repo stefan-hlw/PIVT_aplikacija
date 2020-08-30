@@ -8,6 +8,7 @@ import {
   JoinColumn,
 } from "typeorm";
 import { Recipe } from "./recipe.entity";
+import * as Validator from 'class-validator';
 
 @Index("fk_category_parent_category_id", ["parentCategoryId"], {})
 @Index("uq_category_mage_path", ["imagePath"], { unique: true })
@@ -18,9 +19,15 @@ export class Category {
   categoryId: number;
 
   @Column("varchar", { name: "image_path", unique: true, length: 128 })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(1,128)
   imagePath: string;
 
   @Column("varchar", { name: "name", unique: true, length: 32 })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(5,32)
   name: string;
 
   @Column("int", { name: "parent_category_id", nullable: true, unsigned: true })

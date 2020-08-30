@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
 } from "typeorm";
 import { Recipe } from "./recipe.entity";
+import * as Validator from 'class-validator';
 
 @Index("uq_recipe_image_image_path", ["imagePath"], { unique: true })
 @Index("fk_recipe_image_recipe_id", ["recipeId"], {})
@@ -19,6 +20,9 @@ export class RecipeImage {
   recipeId: number;
 
   @Column("varchar", { name: "image_path", unique: true, length: 128 })
+  @Validator.IsNotEmpty()
+  @Validator.IsString()
+  @Validator.Length(1,128)
   imagePath: string;
 
   @ManyToOne(() => Recipe, (recipe) => recipe.recipeImages, {

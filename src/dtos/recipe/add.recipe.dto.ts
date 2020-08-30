@@ -1,10 +1,26 @@
+import * as Validator from 'class-validator';
+import { RecipeIngredientComponentDto } from './recipe.ingredient.component.dto';
+import { IsArray, ValidateNested } from 'class-validator';
+
 export class AddRecipeDto {
+    @Validator.IsNotEmpty()
+    @Validator.IsString()
+    @Validator.Length(3, 128)
     name: string;
+
     categoryId: number;
+
     administratorId: number;
+
+    @Validator.IsNotEmpty()
+    @Validator.IsString()
+    @Validator.Length(16, 10000)
     instructions: string;
-    ingredients: {
-        ingredientId: number;
-        amount: string; 
-    } [];
+
+    @Validator.IsArray()
+    @Validator.ValidateNested({
+        always: true,
+    })
+    ingredients: RecipeIngredientComponentDto[];
+
 }
