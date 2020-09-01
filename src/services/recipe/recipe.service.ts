@@ -1,12 +1,13 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, Post } from "@nestjs/common";
 import { TypeOrmCrudService } from "@nestjsx/crud-typeorm";
 import { Recipe } from "src/entities/recipe.entity";
-import { Repository } from "typeorm";
+import { Repository, Any, In } from "typeorm";
 import { InjectRepository } from "@nestjs/typeorm";
 import { AddRecipeDto } from "src/dtos/recipe/add.recipe.dto";
 import { ApiResponse } from "src/misc/api.response.class";
 import { RecipeIngredient } from "src/entities/recipe-ingredient.entity";
 import { EditRecipeDto } from "src/dtos/recipe/edit.recipe.dto";
+import { RecipeSearchDto } from "src/dtos/recipe/recipe.search.dto";
 
 @Injectable()
 export class RecipeService extends TypeOrmCrudService<Recipe> {
@@ -27,7 +28,7 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
          newRecipe.administratorId = data.administratorId;
          newRecipe.instructions = data.instructions;
 
-         let savedRecipe = await this.recipe.save(newRecipe)
+         let savedRecipe = await this.recipe.save(newRecipe);
 
          for (let ingredient of data.ingredients) {
              let newRecipeIngredient: RecipeIngredient = new RecipeIngredient();
@@ -39,7 +40,6 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
          }
          return await this.recipe.findOne(savedRecipe.recipeId, {
              relations: [
-                 // might need more work(?)
                  "category",
                  "recipeIngredients",
                  "recipeImages"
@@ -76,7 +76,6 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
                 await this.recipeIngredient.save(newRecipeIngredient);   
                 return await this.recipe.findOne(recipeId, {
                     relations: [
-                        // might need more work(?)
                         "category",
                         "recipeIngredients",
                         "recipeImages"
@@ -86,5 +85,64 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
         }
 
      }
+    
+     
+     async search(data: RecipeSearchDto): Promise<Recipe[]> {
+         const builder = await this.recipe.createQueryBuilder('recipe');
 
+         builder.leftJoin("recipe.recipeIngredients", "ri");
+
+         builder.where(`recipe.categoryId = :catId`, { catId: data.categoryId});
+
+         if(data.keywords && data.keywords.length > 0) {
+             builder.andWhere(`recipe.name LIKE :kw OR recipe.instructions LIKE :kw`, { kw: '%' + data.keywords.trim() + '%'});
+         }
+
+         if (data.ingredients && data.ingredients.length>0) {
+             for (const ingredient of data.ingredients) {
+                 builder.andWhere('ri.ingredientId = :rId AND ri.amount IN (:riAmo)',
+                         {  
+                             rId: ingredient.ingredientId,
+                             riAmo: ingredient.amount,
+                         });
+             }
+         }
+
+         let orderBy = 'recipe.name';
+         let orderDirection: 'ASC' | 'DESC' = 'ASC';
+
+         if (data.orderBy) {
+             orderBy = data.orderBy;
+         }
+         if (data.orderDirection) {
+             orderDirection = data.orderDirection;
+         }
+         builder.orderBy(orderBy, orderDirection);
+
+         let page = 0;
+         let perPage: 5 | 10 | 25 = 25;
+
+         if (data.page && typeof data.page === 'number') {
+             page = data.page;
+         }
+
+         if (data.page && typeof data.itemsPerPage === 'number') {
+             perPage = data.itemsPerPage;
+         }
+         
+         builder.skip(page * perPage);
+         builder.take(perPage);
+
+         let recipeIds = await  (await builder.getMany()).map(recipe => recipe.recipeId);
+
+         return await this.recipe.find({
+             where: { recipeId: In(recipeIds) },
+             relations: [
+                "category",
+                "ingredients",
+                "recipeIngredients",
+                "recipeImages"
+             ]
+         });
+    }
 }

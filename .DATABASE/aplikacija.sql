@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `category` (
 DELETE FROM `category`;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` (`category_id`, `image_path`, `name`, `parent_category_id`) VALUES
-	(1, 'imgur.com', 'CatTest', NULL),
+	(1, 'imgur.com', 'CatTest', 2),
 	(2, 'https://coolinarika.azureedge.net/images/_variations/9/c/9c924e010ccaed50415e25c96877bb39_view_l.jpg?v=0', 'CategoryTest', 1),
 	(4, 'desktop/asd.jpg', 'CatCat', 2),
 	(5, 'desktop/dsads.jpg', 'Ewewewe', 1),
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `recipe` (
   `category_id` int unsigned NOT NULL,
   `administrator_id` int unsigned NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `instructions` tinytext NOT NULL,
+  `instructions` varchar(255) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`recipe_id`),
   KEY `fk_recipe_category_id` (`category_id`),
   KEY `fk_recipe_administrator_id` (`administrator_id`),
@@ -114,14 +114,14 @@ CREATE TABLE IF NOT EXISTS `recipe` (
 DELETE FROM `recipe`;
 /*!40000 ALTER TABLE `recipe` DISABLE KEYS */;
 INSERT INTO `recipe` (`recipe_id`, `name`, `category_id`, `administrator_id`, `created_at`, `instructions`) VALUES
-	(1, 'SarmaEdit', 1, 1, '2020-08-24 21:43:55', 'Editovane instrukcije'),
+	(1, 'SarmaEdit', 5, 1, '2020-08-24 21:43:55', 'Editovane instrukcije'),
 	(2, 'Gulas', 2, 1, '2020-08-25 21:54:24', 'instrukcije za pripremu'),
 	(3, 'Paprikas', 2, 1, '2020-08-25 21:55:31', 'instrukcije za pripremu'),
-	(4, 'Puding', 2, 1, '2020-08-25 21:57:39', 'instrukcije za pripremu'),
-	(5, 'Tiramisu', 2, 1, '2020-08-25 22:00:07', 'instrukcije za pripremu'),
+	(4, 'Puding', 2, 4, '2020-08-25 21:57:39', 'agdsgad za pripremu'),
+	(5, 'Tiramisu', 2, 1, '2020-08-25 22:00:07', 'faedfwafawfaw'),
 	(6, 'Corba', 1, 1, '2020-08-28 17:10:22', 'instrukcije za pripremu'),
 	(7, 'Corba 2', 1, 1, '2020-08-28 17:11:25', 'instrukcije za pripremu'),
-	(8, 'Corba 2', 1, 1, '2020-08-28 17:11:47', 'instrukcije za pripremu');
+	(8, 'Corba 3', 1, 1, '2020-08-28 17:11:47', 'instrukcije za pripremu');
 /*!40000 ALTER TABLE `recipe` ENABLE KEYS */;
 
 DROP TABLE IF EXISTS `recipe_image`;
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `recipe_ingredient` (
   KEY `fk_recipe_ingredient_ingredient_id` (`ingredient_id`),
   CONSTRAINT `fk_recipe_ingredient_ingredient_id` FOREIGN KEY (`ingredient_id`) REFERENCES `ingredients` (`ingredient_id`) ON UPDATE CASCADE,
   CONSTRAINT `fk_recipe_ingredient_recipe_id` FOREIGN KEY (`recipe_id`) REFERENCES `recipe` (`recipe_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 DELETE FROM `recipe_ingredient`;
 /*!40000 ALTER TABLE `recipe_ingredient` DISABLE KEYS */;
@@ -163,7 +163,11 @@ INSERT INTO `recipe_ingredient` (`recipe_ingredient_id`, `recipe_id`, `ingredien
 	(6, 6, 2, '16'),
 	(7, 7, 2, '16'),
 	(8, 8, 2, '16'),
-	(13, 1, 2, '23');
+	(13, 1, 2, '23'),
+	(14, 1, 5, '3'),
+	(15, 1, 6, '2'),
+	(16, 2, 1, '2'),
+	(17, 2, 7, '3');
 /*!40000 ALTER TABLE `recipe_ingredient` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

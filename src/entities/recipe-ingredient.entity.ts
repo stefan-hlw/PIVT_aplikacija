@@ -30,6 +30,7 @@ export class RecipeIngredient {
 
   @Column("varchar", { name: "amount", length: 255 })
   @Validator.IsNotEmpty()
+  @Validator.IsString()
   @Validator.Length(1,255)
   amount: string;
 

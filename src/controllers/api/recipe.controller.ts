@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete, Patch } from "@nestjs/common";
+import { Controller, Post, Body, Param, UseInterceptors, UploadedFile, Req, Delete, Patch, UseGuards } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
 import { Recipe } from "src/entities/recipe.entity";
 import { RecipeService } from "src/services/recipe/recipe.service";
@@ -14,6 +14,7 @@ import * as fileType from 'file-type';
 import * as fs from 'fs';
 import * as sharp from 'sharp';
 import { EditRecipeDto } from "src/dtos/recipe/edit.recipe.dto";
+import { RecipeSearchDto } from "src/dtos/recipe/recipe.search.dto";
 
 @Controller('api/recipe')
 @Crud({
@@ -32,6 +33,9 @@ import { EditRecipeDto } from "src/dtos/recipe/edit.recipe.dto";
             recipeImages: {
                 eager: true
             },
+            recipeIngredients: {
+                eager: true
+            },
             ingredients: {
                 eager: true
             }
@@ -44,8 +48,9 @@ import { EditRecipeDto } from "src/dtos/recipe/edit.recipe.dto";
     }
 })
 export class RecipeController {
-    constructor(public service: RecipeService,
-                public recipeImageService: RecipeImageService) {}
+    constructor(
+        public service: RecipeService,
+        public recipeImageService: RecipeImageService) {}
 
     @Post('createFull')  // POST http://localhost:3000/api/recipe/createFull/
     createFullRecipe(@Body() data: AddRecipeDto) {
@@ -194,5 +199,10 @@ export class RecipeController {
             return new ApiResponse('error', -4004, 'Photo not found');
         }
         return new ApiResponse('ok', 0, 'One photo deleted!')
+    }
+
+    @Post('search')
+    async search(@Body() data: RecipeSearchDto): Promise<Recipe[]> {
+        return await this.service.search(data);
     }
     }
