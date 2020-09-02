@@ -18,7 +18,7 @@ export class AuthMiddleware implements NestMiddleware {
 
         const tokenParts = token.split(' ');
         if (tokenParts.length !==2) {
-            throw new HttpException('Bad not found', HttpStatus.UNAUTHORIZED);
+            throw new HttpException('Bad token found', HttpStatus.UNAUTHORIZED);
         }
 
         const tokenString = tokenParts[1]

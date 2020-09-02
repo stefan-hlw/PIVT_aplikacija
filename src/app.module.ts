@@ -24,6 +24,7 @@ import { RecipeIngredientService } from './services/recipe-ingredient/recipe-ing
 import { RecipeIngredientController } from './controllers/api/recipe-ingredient.controller';
 import { AuthController } from './controllers/api/auth.controller';
 import { AuthMiddleware } from './middlewares/auth.middleware';
+import { UserToken } from './entities/user-token-entity';
 
 
 
@@ -46,6 +47,7 @@ DatabaseConfiguration
         Category, 
         IngredientCategory, 
         Ingredients,
+        UserToken
          ]
     }),
     TypeOrmModule.forFeature([ Administrator, 
@@ -55,6 +57,7 @@ DatabaseConfiguration
       Category, 
       IngredientCategory, 
       Ingredients,
+      UserToken
       ])
   ],
   controllers: [AppController,
