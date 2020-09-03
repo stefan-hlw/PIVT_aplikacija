@@ -30,8 +30,8 @@ export class AdministratorController {
         });
     }
 
-    // PUT http://localhost:3000/api/administrator/
-    @Put()
+    // POST http://localhost:3000/api/administrator/
+    @Post()
     add(@Body() data: AddAdministratorDto): Promise<Administrator | ApiResponse> {
         return this.administratorService.add(data);
     }

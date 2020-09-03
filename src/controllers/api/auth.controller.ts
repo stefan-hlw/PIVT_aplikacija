@@ -10,7 +10,7 @@ import { Request } from "express";
 import { jwtSecret } from "config/jwt.secret";
 import { JwtRefreshDataAdministratorDto } from "src/dtos/administrator/jwt.refresh.data.dto";
 import { AdminRefreshTokenDto } from "src/dtos/administrator/admin.refresh.token.dto";
-
+import { AddAdministratorDto } from "src/dtos/administrator/add.administrator.dto";
 
 @Controller('auth/')
 export class AuthController {
@@ -20,7 +20,7 @@ export class AuthController {
     async doLogin(@Body() data: LoginAdministratorDto, @Req() req: Request): Promise<LoginInfoAdministratorDto | ApiResponse> {
         const administrator = await this.administratorService.getByUsername(data.username);
         if (!administrator) {
-            return new Promise(resolve => resolve(new ApiResponse('error', -3001)));
+            return new ApiResponse('error', -3001);
         }
 
         const passwordHash = crypto.createHash('sha512');
@@ -28,7 +28,7 @@ export class AuthController {
         const passwordHashString = passwordHash.digest('hex').toUpperCase();
 
         if(administrator.passwordHash !== passwordHashString) {
-            return new Promise(resolve => resolve(new ApiResponse('error', -3002)));
+            return new ApiResponse('error', 3002);
         }
         // Token JWT(json web token) getting required info
         const jwtData = new JwtDataAdministratorDto();
@@ -66,6 +66,12 @@ export class AuthController {
 
         return new Promise(resolve => resolve(responseObject));
     }
+
+    @Post('user/register')
+    async userRegister(@Body() data: AddAdministratorDto) {
+        return await this.administratorService.add(data);
+    }
+    
     @Post('user/refresh') // http://localhost:3000/auth/user/refresh
     async userTokenRefresh(@Req() req: Request, @Body() data: AdminRefreshTokenDto): Promise<LoginInfoAdministratorDto | ApiResponse> {
         const userToken = await this.administratorService.getUserToken(data.token);
