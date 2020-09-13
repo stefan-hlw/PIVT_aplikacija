@@ -4,7 +4,7 @@ import { RecipeSearchIngredientDto } from './recipe.search.ingredient.dto';
 export class RecipeSearchDto {
     @Validator.IsOptional()
     @Validator.IsString()
-    @Validator.Length(1, 128)
+    @Validator.Length(0, 128)
     keywords: string;
 
     @Validator.IsOptional()

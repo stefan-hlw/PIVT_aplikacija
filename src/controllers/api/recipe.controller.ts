@@ -202,7 +202,7 @@ export class RecipeController {
     }
 
     @Post('search')
-    async search(@Body() data: RecipeSearchDto): Promise<Recipe[]> {
+    async search(@Body() data: RecipeSearchDto): Promise<Recipe[] | ApiResponse> {
         return await this.service.search(data);
     }
     }
