@@ -85,7 +85,6 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
         }
 
      }
-    
      
      async search(data: RecipeSearchDto): Promise<Recipe[] | ApiResponse> {
          const builder = await this.recipe.createQueryBuilder('recipe');
@@ -95,7 +94,7 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
          builder.where(`recipe.categoryId = :catId`, { catId: data.categoryId});
 
          if(data.keywords && data.keywords.length > 0) {
-             builder.andWhere(`recipe.name LIKE :kw OR recipe.instructions LIKE :kw`, { kw: '%' + data.keywords.trim() + '%'});
+             builder.andWhere(`(recipe.name LIKE :kw OR recipe.instructions LIKE :kw)`, { kw: '%' + data.keywords.trim() + '%'});
          }
 
          if (data.ingredients && data.ingredients.length>0) {
