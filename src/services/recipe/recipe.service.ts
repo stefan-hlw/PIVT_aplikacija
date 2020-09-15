@@ -89,7 +89,9 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
      async search(data: RecipeSearchDto): Promise<Recipe[] | ApiResponse> {
          const builder = await this.recipe.createQueryBuilder('recipe');
 
-         builder.leftJoin("recipe.recipeIngredients", "ri");
+         builder.leftJoinAndSelect("recipe.recipeIngredients", "ri");
+         builder.leftJoinAndSelect("recipe.ingredients", "ingredients");
+         builder.leftJoinAndSelect("recipe.recipeImages", "photos");
 
          builder.where(`recipe.categoryId = :catId`, { catId: data.categoryId});
 
@@ -132,20 +134,13 @@ export class RecipeService extends TypeOrmCrudService<Recipe> {
          builder.skip(page * perPage);
          builder.take(perPage);
 
-         let recipeIds = await  (await builder.getMany()).map(recipe => recipe.recipeId);
+         let recipes = await builder.getMany();
 
-         if (recipeIds.length === 0) {
+         if (recipes.length === 0) {
             return new ApiResponse("ok", 0, "No recipes found")
          }
 
-         return await this.recipe.find({
-             where: { recipeId: In(recipeIds) },
-             relations: [
-                "category",
-                "ingredients",
-                "recipeIngredients",
-                "recipeImages"
-             ]
-         });
+         return recipes;
+
     }
 }

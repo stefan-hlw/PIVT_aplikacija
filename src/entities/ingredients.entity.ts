@@ -9,13 +9,13 @@ import {
   ManyToMany,
   JoinTable,
 } from "typeorm";
-import { IngredientCategory } from "./ingredient-category.entity";
 import { RecipeIngredient } from "./recipe-ingredient.entity";
 import { Recipe } from "./recipe.entity";
 import * as Validator from 'class-validator';
+import { Category } from "./category.entity";
 
-@Index("uq_ingredients_name", ["name"], { unique: true })
-@Index("fk_igredients_ingredient_category_id", ["ingredientCategoryId"], {})
+@Index("fk_article_category_id", ["categoryId"], {})
+@Index("uq_ingredients_category_id_name", ["name", "categoryId"], { unique: true })
 @Entity()
 export class Ingredients {
   @PrimaryGeneratedColumn({
@@ -31,21 +31,8 @@ export class Ingredients {
   @Validator.Length(3, 32)
   name: string;
 
-  @Column("int", { name: "ingredient_category_id", unsigned: true })
-  ingredientCategoryId: number;
-
-  @ManyToOne(
-    () => IngredientCategory,
-    (ingredientCategory) => ingredientCategory.ingredients,
-    { onDelete: "NO ACTION", onUpdate: "CASCADE" }
-  )
-  @JoinColumn([
-    {
-      name: "ingredient_category_id",
-      referencedColumnName: "ingredientCategoryId",
-    },
-  ])
-  ingredientCategory: IngredientCategory;
+  @Column({ type: "int", name: "category_id", unsigned: true })
+  categoryId: number;
 
   @OneToMany(
     () => RecipeIngredient,
@@ -61,4 +48,13 @@ export class Ingredients {
 	inverseJoinColumn: { name: "recipe_id", referencedColumnName: "recipeId" }
   })
   recipe: Recipe[];
+
+  @ManyToOne(
+    () => Category,
+    category => category.ingredients,
+    { onDelete: "NO ACTION", onUpdate: "CASCADE" }
+  )
+
+  @JoinColumn([{ name: "category_id", referencedColumnName: "categoryId" }])
+  category: Category;
 }

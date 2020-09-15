@@ -8,7 +8,6 @@ import { Recipe } from './entities/recipe.entity';
 import { RecipeImage } from './entities/recipe-image.entity';
 import { RecipeIngredient } from './entities/recipe-ingredient.entity';
 import { Category } from './entities/category.entity';
-import { IngredientCategory } from './entities/ingredient-category.entity';
 import { Ingredients } from './entities/ingredients.entity';
 import { AdministratorController } from './controllers/api/administrator.controller';
 import { CategoryService } from './services/category/category.service';
@@ -17,8 +16,6 @@ import { IngredientsService } from './services/ingredients/ingredients.service';
 import { IngredientsController } from './controllers/api/ingredients.controller';
 import { RecipeService } from './services/recipe/recipe.service';
 import { RecipeController } from './controllers/api/recipe.controller';
-import { IngredientCategoryService } from './services/ingredient-category/ingredient-category.service';
-import { IngredientCategoryController } from './controllers/api/ingredient-category.controller';
 import { RecipeImageService } from './services/recipe-image/recipe-image.service';
 import { RecipeIngredientService } from './services/recipe-ingredient/recipe-ingredient.service';
 import { RecipeIngredientController } from './controllers/api/recipe-ingredient.controller';
@@ -45,7 +42,6 @@ DatabaseConfiguration
         RecipeImage, 
         RecipeIngredient, 
         Category, 
-        IngredientCategory, 
         Ingredients,
         UserToken
          ]
@@ -55,7 +51,6 @@ DatabaseConfiguration
       RecipeImage, 
       RecipeIngredient, 
       Category, 
-      IngredientCategory, 
       Ingredients,
       UserToken
       ])
@@ -65,14 +60,12 @@ DatabaseConfiguration
                 CategoryController,
                 IngredientsController,
                 RecipeController,
-                IngredientCategoryController,
                 RecipeIngredientController,
                 AuthController],
   providers: [AdministratorService,
               CategoryService,
               IngredientsService,
               RecipeService,
-              IngredientCategoryService,
               RecipeImageService,
               RecipeIngredientService],
               exports: [

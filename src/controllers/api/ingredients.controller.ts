@@ -1,5 +1,6 @@
-import { Controller } from "@nestjs/common";
+import { Controller, Get, Param } from "@nestjs/common";
 import { Crud } from "@nestjsx/crud";
+import DistinctIngredientsDto from "src/dtos/ingredients/distinct.ingredients.dto";
 import { Ingredients } from "src/entities/ingredients.entity";
 import { IngredientsService } from "src/services/ingredients/ingredients.service";
 
@@ -17,14 +18,24 @@ import { IngredientsService } from "src/services/ingredients/ingredients.service
     },
     query: {
         join: {
-            ingredientCategory: {
+            category: {
                 eager: true
             },
-            
+            recipeIngredients: {
+                eager: false
+            },
+            recipes: {
+                eager: false
+            }
             
         }
     },
 })
 export class IngredientsController {
     constructor(public service: IngredientsService) {}
+
+    @Get('amount/:categoryId')
+    async getDistinctByCategoryId(@Param('categoryId') categoryId: number): Promise<DistinctIngredientsDto> {
+        return await this.service.getDistinctByCategoryId(categoryId);
+    }
 }

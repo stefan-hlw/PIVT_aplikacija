@@ -9,6 +9,7 @@ import {
 } from "typeorm";
 import { Recipe } from "./recipe.entity";
 import * as Validator from 'class-validator';
+import { Ingredients } from "./ingredients.entity";
 
 @Index("fk_category_parent_category_id", ["parentCategoryId"], {})
 @Index("uq_category_mage_path", ["imagePath"], { unique: true })
@@ -47,6 +48,12 @@ export class Category {
 
   @OneToMany(() => Category, (category) => category.parentCategory)
   categories: Category[];
+
+  @OneToMany(
+    () => Ingredients,
+    ingredient => ingredient.category
+  )
+  ingredients: Ingredients[];
 }
 
 
