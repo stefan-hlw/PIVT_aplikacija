@@ -265,7 +265,7 @@
 				{
 					"name": "Add a new administrator",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -275,7 +275,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"StefanVucan\",\r\n    \"password\": \"PassTest9977\"\r\n}"
+							"raw": "{\r\n    \"username\": \"StefanVucanVucanTest\",\r\n    \"password\": \"PassTest9977\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/administrator/",
@@ -725,7 +725,7 @@
 				"bearer": [
 					{
 						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTk5ODI5MzcwLjkzOSwiaXAiOiI6OmZmZmY6MTI3LjAuMC4xIiwidWEiOiJQb3N0bWFuUnVudGltZS83LjI2LjMiLCJpYXQiOjE1OTg2MTk3NzB9.bh0UwfZObvvHruGcuwOvyOU_y5l5NdXSbOMfwqf4hDo",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjAxODEyNzM0LjI2MSwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5OTEzNDMzNH0.etke4rvrOREGtHRQro1rsaDszBEHNykGTFBwyTUDKuc",
 						"type": "string"
 					}
 				]
@@ -861,12 +861,12 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/C:/Users/stefa/Desktop/sarma.jpg"
+									"src": "/C:/Users/stefa/Desktop/Baklava-blog-2-500x500.jpg"
 								}
 							]
 						},
 						"url": {
-							"raw": "http://localhost:3000/api/recipe/1/uploadPhoto/",
+							"raw": "http://localhost:3000/api/recipe/9/uploadPhoto/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -875,7 +875,7 @@
 							"path": [
 								"api",
 								"recipe",
-								"1",
+								"9",
 								"uploadPhoto",
 								""
 							]
@@ -1291,99 +1291,6 @@
 					]
 				},
 				{
-					"name": "Edit a single recipe without ingredients",
-					"request": {
-						"method": "PATCH",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije\"\r\n}\r\n"
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/recipe/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"recipe",
-								"1"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Edit a single recipe without ingredients - Success",
-							"originalRequest": {
-								"method": "PATCH",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije\"\r\n}\r\n"
-								},
-								"url": {
-									"raw": "http://localhost:3000/api/recipe/1",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"recipe",
-										"1"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "367"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"16f-p6xewYWh7+6WRKjyKz508xKB9fo\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 28 Aug 2020 15:19:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"recipeId\": 1,\n    \"name\": \"SarmaEdit\",\n    \"categoryId\": 1,\n    \"administratorId\": 1,\n    \"createdAt\": \"2020-08-24T19:43:55.000Z\",\n    \"instructions\": \"Editovane instrukcije\",\n    \"recipeImages\": [\n        {\n            \"imgId\": 17,\n            \"recipeId\": 1,\n            \"imagePath\": \"2020828-3721521473-sarma.jpg\"\n        }\n    ],\n    \"ingredients\": [\n        {\n            \"ingredientId\": 4,\n            \"name\": \"Onion\",\n            \"ingredientCategoryId\": 1\n        },\n        {\n            \"ingredientId\": 5,\n            \"name\": \"Garlic\",\n            \"ingredientCategoryId\": 1\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
 					"name": "Edit a single recipe with Ingredients",
 					"request": {
 						"method": "PATCH",
@@ -1396,7 +1303,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije\",\r\n    \"ingredients\": [\r\n        {\r\n        \"ingredientId\": 2,\r\n        \"amount\": \"23\" \r\n       }\r\n\r\n    ]\r\n}\r\n"
+							"raw": "{\r\n    \"name\": \"SarmaEdit\",\r\n    \"categoryId\": 1,\r\n    \"administratorId\": 1,\r\n    \"instructions\": \"Editovane instrukcije123123123\",\r\n    \"ingredients\": [\r\n        {\r\n        \"ingredientId\": 2,\r\n        \"amount\": \"23\" \r\n       }\r\n\r\n    ]\r\n}\r\n"
 						},
 						"url": {
 							"raw": "http://localhost:3000/api/recipe/1",
@@ -1536,17 +1443,279 @@
 							"body": "{\n    \"recipeId\": 1,\n    \"name\": \"SarmaEdit\",\n    \"categoryId\": 1,\n    \"administratorId\": 1,\n    \"createdAt\": \"2020-08-24T19:43:55.000Z\",\n    \"instructions\": \"Editovane instrukcije\",\n    \"category\": {\n        \"categoryId\": 1,\n        \"imagePath\": \"imgur.com\",\n        \"name\": \"CatTest\",\n        \"parentCategoryId\": null\n    },\n    \"recipeIngredients\": [\n        {\n            \"recipeIngredientId\": 13,\n            \"recipeId\": 1,\n            \"ingredientId\": 2,\n            \"amount\": \"23\"\n        }\n    ],\n    \"recipeImages\": [\n        {\n            \"imgId\": 17,\n            \"recipeId\": 1,\n            \"imagePath\": \"2020828-3721521473-sarma.jpg\"\n        }\n    ]\n}"
 						}
 					]
+				},
+				{
+					"name": "Get many recipes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/recipe/?filter=categoryId||$eq||1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipe",
+								""
+							],
+							"query": [
+								{
+									"key": "filter",
+									"value": "categoryId||$eq||1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get many recipes - Search by category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/?filter=categoryId||$eq||1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										""
+									],
+									"query": [
+										{
+											"key": "filter",
+											"value": "categoryId||$eq||1"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1146"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"47a-iFVKtk7rzUHDaJhsHG8LZzGtzS4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 Aug 2020 13:06:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"recipeId\": 1,\n        \"name\": \"SarmaEdit\",\n        \"categoryId\": 1,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-24T19:43:55.000Z\",\n        \"instructions\": \"Editovane instrukcije\",\n        \"recipeImages\": [\n            {\n                \"imgId\": 17,\n                \"recipeId\": 1,\n                \"imagePath\": \"2020828-3721521473-sarma.jpg\"\n            }\n        ],\n        \"ingredients\": [\n            {\n                \"ingredientId\": 2,\n                \"name\": \"Apple\",\n                \"ingredientCategoryId\": 2\n            },\n            {\n                \"ingredientId\": 5,\n                \"name\": \"Garlic\",\n                \"ingredientCategoryId\": 1\n            },\n            {\n                \"ingredientId\": 6,\n                \"name\": \"Celer\",\n                \"ingredientCategoryId\": 1\n            }\n        ]\n    },\n    {\n        \"recipeId\": 6,\n        \"name\": \"Corba\",\n        \"categoryId\": 1,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-28T15:10:22.000Z\",\n        \"instructions\": \"instrukcije za pripremu\",\n        \"recipeImages\": [],\n        \"ingredients\": [\n            {\n                \"ingredientId\": 2,\n                \"name\": \"Apple\",\n                \"ingredientCategoryId\": 2\n            }\n        ]\n    },\n    {\n        \"recipeId\": 7,\n        \"name\": \"Corba 2\",\n        \"categoryId\": 1,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-28T15:11:25.000Z\",\n        \"instructions\": \"instrukcije za pripremu\",\n        \"recipeImages\": [],\n        \"ingredients\": [\n            {\n                \"ingredientId\": 2,\n                \"name\": \"Apple\",\n                \"ingredientCategoryId\": 2\n            }\n        ]\n    },\n    {\n        \"recipeId\": 8,\n        \"name\": \"Corba 2\",\n        \"categoryId\": 1,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-28T15:11:47.000Z\",\n        \"instructions\": \"instrukcije za pripremu\",\n        \"recipeImages\": [],\n        \"ingredients\": [\n            {\n                \"ingredientId\": 2,\n                \"name\": \"Apple\",\n                \"ingredientCategoryId\": 2\n            }\n        ]\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Search recipes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ingredientId\": 2\r\n\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/recipe/search/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"recipe",
+								"search",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Search recipes - search by ingredient",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryId\": 2,\r\n    \"ingredients\": [ \r\n        {\r\n            \"ingredientId\": 1,\r\n            \"amount\": \"2\"\r\n        }\r\n    ]\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/search/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"search",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "146"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"92-wvKPwrilnv0bAcG97viO/XNYEdY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 Aug 2020 15:35:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"recipeId\": 2,\n        \"name\": \"Gulas\",\n        \"categoryId\": 2,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-25T19:54:24.000Z\",\n        \"instructions\": \"instrukcije za pripremu\"\n    }\n]"
+						},
+						{
+							"name": "Search recipes - search by category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoryId\": 2\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/recipe/search/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"recipe",
+										"search",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "588"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"24c-NfeIFNt6rHuqh5BRI64xLsEkMWA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 30 Aug 2020 15:36:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"recipeId\": 2,\n        \"name\": \"Gulas\",\n        \"categoryId\": 2,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-25T19:54:24.000Z\",\n        \"instructions\": \"instrukcije za pripremu\"\n    },\n    {\n        \"recipeId\": 3,\n        \"name\": \"Paprikas\",\n        \"categoryId\": 2,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-25T19:55:31.000Z\",\n        \"instructions\": \"instrukcije za pripremu\"\n    },\n    {\n        \"recipeId\": 4,\n        \"name\": \"Puding\",\n        \"categoryId\": 2,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-25T19:57:39.000Z\",\n        \"instructions\": \"instrukcije za pripremu\"\n    },\n    {\n        \"recipeId\": 5,\n        \"name\": \"Tiramisu\",\n        \"categoryId\": 2,\n        \"administratorId\": 1,\n        \"createdAt\": \"2020-08-25T20:00:07.000Z\",\n        \"instructions\": \"instrukcije za pripremu\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get a picture",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storage/photos/small/2020913-5711932736-sarma.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storage",
+								"photos",
+								"small",
+								"2020913-5711932736-sarma.jpg"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"auth": {
-				"type": "bearer",
-				"bearer": [
-					{
-						"key": "token",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTk5ODM3NTQ0LjcyLCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNi4zIiwiaWF0IjoxNTk4NjI3OTQ0fQ.uT_f_3Vq78JTzv5EXTM5sMn33onnkWb3ZjcF6qt7H_M",
-						"type": "string"
-					}
-				]
+				"type": "noauth"
 			},
 			"event": [
 				{
@@ -1605,6 +1774,67 @@
 						}
 					},
 					"response": [
+						{
+							"name": "Login - Refresh token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}"
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/login/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "601"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"259-MCxwxByKMRG5zUKJ0w77/ROA1gk\""
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 01 Sep 2020 22:26:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 31,\n    \"username\": \"admin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTk4OTk5NDY4LjkxNCwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5ODk5OTE2OH0.iE9HnNZbn1jKPKUZOzloHrZsDomg_uK_Sfert8zeyDM\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjAxNjc3NTY4LjkxNCwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5ODk5OTE2OH0.t412kgSRCUJccVd5fQaRifdX7zCThRM0o1ClLwpd8sI\",\n    \"refreshTokenExpiresAt\": \"2020-10-02T22:26:08.914Z\"\n}"
+						},
 						{
 							"name": "Login - admin doesn't exist",
 							"originalRequest": {
@@ -1789,6 +2019,178 @@
 							"body": "{\n    \"administratorId\": 31,\n    \"username\": \"admin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXh0IjoxNTk5NjU5NDEzLjI0NywiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5ODQ0OTgxM30.4s_UXwd3s-B3oFS1med6ZqpRYriSlnQ2vj9d2KvlMUY\"\n}"
 						}
 					]
+				},
+				{
+					"name": "Refresh token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjAxNzIzODk2LjE3NCwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5OTA0NTQ5Nn0.Dkxm4VJq8mZt3Plp-gMf-w1U1l5TZsWSlntpL5mWWRk\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/auth/user/refresh/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"user",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh token - Refresh example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjAxNzIzNTI3LjQyLCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNi4zIiwiaWF0IjoxNTk5MDQ1MTI3fQ.XgAahUXE_yX9qnIV4qTX6_8uW_ccBXxpXoK30d14nV0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/refresh/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"refresh",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "600"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"258-+xpQn23896iUqOgiZjDHVJZz464\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Sep 2020 11:16:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administratorId\": 31,\n    \"username\": \"admin\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTk5MDQ1NzA2LjAzMiwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5OTA0NTQwNn0.HLOs1kYlqkrR6gizU7B9EeJgSYOYylyv-2zcicJ34Uw\",\n    \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjAxNzIzNTI3LjQyLCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNi4zIiwiaWF0IjoxNTk5MDQ1MTI3fQ.XgAahUXE_yX9qnIV4qTX6_8uW_ccBXxpXoK30d14nV0\",\n    \"refreshTokenExpiresAt\": \"2020-10-03T11:12:07.420Z\"\n}"
+						},
+						{
+							"name": "Refresh token - invalid token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjAxNzIzODk2LjE3NCwiaXAiOiI6OjEiLCJ1YSI6IlBvc3RtYW5SdW50aW1lLzcuMjYuMyIsImlhdCI6MTU5OTA0NTQ5Nn0.Dkxm4VJq8mZt3Plp-gMf-w1U1l5TZsWSlntpL5mWWRk\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/auth/user/refresh/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"user",
+										"refresh",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "79"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4f-206pchMUUICBt/3siRe8l0lU0ZE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 02 Sep 2020 11:18:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"statusCode\": -10003,\n    \"message\": \"The token is no longer valid\"\n}"
+						}
+					]
 				}
 			],
 			"auth": {
@@ -1834,7 +2236,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/ingredients/1/",
+							"raw": "http://localhost:3000/api/ingredients/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -1843,7 +2245,6 @@
 							"path": [
 								"api",
 								"ingredients",
-								"1",
 								""
 							]
 						}
@@ -1855,7 +2256,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:3000/api/ingredients/1/",
+									"raw": "http://localhost:3000/api/ingredients/",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -1864,7 +2265,6 @@
 									"path": [
 										"api",
 										"ingredients",
-										"1",
 										""
 									]
 								}
@@ -1878,56 +2278,8 @@
 									"value": "Express"
 								},
 								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "126"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"7e-7iaJ4hcz738ZaKdGOnQvqYps3jo\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 28 Aug 2020 13:36:02 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"ingredientId\": 1,\n    \"name\": \"Carrot\",\n    \"ingredientCategoryId\": 1,\n    \"ingredientCategory\": {\n        \"ingredientCategoryId\": 1,\n        \"name\": \"Vegetable\"\n    }\n}"
-						},
-						{
-							"name": "Get all ingredients - Success",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/ingredients/1/",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"ingredients",
-										"1",
-										""
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
 								},
 								{
 									"key": "Content-Type",
@@ -1935,15 +2287,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "626"
+									"value": "1098"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"272-DkuNkLSvBGSBXYTOHErOFtrE4p4\""
+									"value": "W/\"44a-y2pY01n1DsVFnCmBZpWt/6JDiuw\""
 								},
 								{
 									"key": "Date",
-									"value": "Fri, 28 Aug 2020 13:35:22 GMT"
+									"value": "Wed, 16 Sep 2020 15:38:31 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1951,7 +2303,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"ingredientId\": 1,\n        \"name\": \"Carrot\",\n        \"ingredientCategoryId\": 1,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 1,\n            \"name\": \"Vegetable\"\n        }\n    },\n    {\n        \"ingredientId\": 2,\n        \"name\": \"Apple\",\n        \"ingredientCategoryId\": 2,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 2,\n            \"name\": \"Fruit\"\n        }\n    },\n    {\n        \"ingredientId\": 3,\n        \"name\": \"Chicken\",\n        \"ingredientCategoryId\": 3,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 3,\n            \"name\": \"Meat\"\n        }\n    },\n    {\n        \"ingredientId\": 4,\n        \"name\": \"Onion\",\n        \"ingredientCategoryId\": 1,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 1,\n            \"name\": \"Vegetable\"\n        }\n    },\n    {\n        \"ingredientId\": 5,\n        \"name\": \"Garlic\",\n        \"ingredientCategoryId\": 1,\n        \"ingredientCategory\": {\n            \"ingredientCategoryId\": 1,\n            \"name\": \"Vegetable\"\n        }\n    }\n]"
+							"body": "[\n    {\n        \"ingredientId\": 2,\n        \"name\": \"Apple\",\n        \"categoryId\": 5,\n        \"category\": {\n            \"categoryId\": 5,\n            \"imagePath\": \"desktop/dsads.jpg\",\n            \"name\": \"EditTest\",\n            \"parentCategoryId\": 4\n        }\n    },\n    {\n        \"ingredientId\": 9,\n        \"name\": \"BakTest\",\n        \"categoryId\": 6,\n        \"category\": {\n            \"categoryId\": 6,\n            \"imagePath\": \"desktop/dasdass.jpg\",\n            \"name\": \"dwadwa\",\n            \"parentCategoryId\": 8\n        }\n    },\n    {\n        \"ingredientId\": 1,\n        \"name\": \"Carrot\",\n        \"categoryId\": 5,\n        \"category\": {\n            \"categoryId\": 5,\n            \"imagePath\": \"desktop/dsads.jpg\",\n            \"name\": \"EditTest\",\n            \"parentCategoryId\": 4\n        }\n    },\n    {\n        \"ingredientId\": 6,\n        \"name\": \"Celer\",\n        \"categoryId\": 4,\n        \"category\": {\n            \"categoryId\": 4,\n            \"imagePath\": \"desktop/asd.jpg\",\n            \"name\": \"CatCat\",\n            \"parentCategoryId\": 2\n        }\n    },\n    {\n        \"ingredientId\": 3,\n        \"name\": \"Chicken\",\n        \"categoryId\": 4,\n        \"category\": {\n            \"categoryId\": 4,\n            \"imagePath\": \"desktop/asd.jpg\",\n            \"name\": \"CatCat\",\n            \"parentCategoryId\": 2\n        }\n    },\n    {\n        \"ingredientId\": 5,\n        \"name\": \"Garlic\",\n        \"categoryId\": null,\n        \"category\": null\n    },\n    {\n        \"ingredientId\": 7,\n        \"name\": \"Krastavac\",\n        \"categoryId\": null,\n        \"category\": null\n    },\n    {\n        \"ingredientId\": 4,\n        \"name\": \"Onion\",\n        \"categoryId\": null,\n        \"category\": null\n    },\n    {\n        \"ingredientId\": 8,\n        \"name\": \"TiraTest\",\n        \"categoryId\": 6,\n        \"category\": {\n            \"categoryId\": 6,\n            \"imagePath\": \"desktop/dasdass.jpg\",\n            \"name\": \"dwadwa\",\n            \"parentCategoryId\": 8\n        }\n    }\n]"
 						}
 					]
 				},
@@ -1961,10 +2313,78 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": ""
+							"raw": "http://localhost:3000/api/ingredients/6/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"6",
+								""
+							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get one ingredient - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/ingredients/6/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"ingredients",
+										"6",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "144"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"90-mxfMuv0d4Lj+AUoHjZd38vYFAJU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Sep 2020 15:47:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ingredientId\": 6,\n    \"name\": \"Celery\",\n    \"categoryId\": 4,\n    \"category\": {\n        \"categoryId\": 4,\n        \"imagePath\": \"desktop/asd.jpg\",\n        \"name\": \"CatCat\",\n        \"parentCategoryId\": 2\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "Add a new ingredient",
@@ -2153,6 +2573,85 @@
 							"body": "{\n    \"ingredientId\": 6,\n    \"name\": \"Celer\",\n    \"ingredientCategoryId\": 1,\n    \"ingredientCategory\": {\n        \"ingredientCategoryId\": 1,\n        \"name\": \"Vegetable\"\n    }\n}"
 						}
 					]
+				},
+				{
+					"name": "Get distinct amounts for ingredients of a single category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/ingredients/amount/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"ingredients",
+								"amount",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get distinct amounts for ingredients of a single category - Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/ingredients/amount/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"ingredients",
+										"amount",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "143"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8f-V+AbGH+yExRuPvcxM+g+4C/uSeU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 16 Sep 2020 15:47:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ingredients\": [\n        {\n            \"ingredientId\": 1,\n            \"name\": \"Carrot\",\n            \"amounts\": [\n                \"14 komada\",\n                \"2\"\n            ]\n        },\n        {\n            \"ingredientId\": 2,\n            \"name\": \"Apple\",\n            \"amounts\": [\n                \"16\",\n                \"23\",\n                \"test\"\n            ]\n        }\n    ]\n}"
+						}
+					]
 				}
 			],
 			"protocolProfileBehavior": {}
@@ -2163,7 +2662,7 @@
 		"bearer": [
 			{
 				"key": "token",
-				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTk5ODM3NTQ0LjcyLCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNi4zIiwiaWF0IjoxNTk4NjI3OTQ0fQ.uT_f_3Vq78JTzv5EXTM5sMn33onnkWb3ZjcF6qt7H_M",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbmlzdHJhdG9ySWQiOjMxLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjAwMDE1MDE5LjIzLCJpcCI6Ijo6MSIsInVhIjoiUG9zdG1hblJ1bnRpbWUvNy4yNi4zIiwiaWF0IjoxNTk4ODA1NDE5fQ._9MD64MRwmivseMPXWgX2qLyNu50ITT58uIUnvZmQOk",
 				"type": "string"
 			}
 		]
