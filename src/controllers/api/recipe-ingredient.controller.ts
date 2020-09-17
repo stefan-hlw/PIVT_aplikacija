@@ -15,7 +15,13 @@ import { RecipeIngredientService } from "src/services/recipe-ingredient/recipe-i
             primary: true
         }
     },
-   
+    query: {
+        join: {
+            ingredients: {
+                eager: true
+            },
+        }
+    }
     }
 )
 export class RecipeIngredientController {

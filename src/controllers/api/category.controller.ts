@@ -22,6 +22,15 @@ import { CategoryService } from "src/services/category/category.service";
             },
             
         }
+    },
+    routes: {
+        only: [
+            "createOneBase",
+            "createManyBase",
+            "updateOneBase",
+            "getManyBase",
+            "getOneBase",
+        ],
     }
 })
 export class CategoryController {

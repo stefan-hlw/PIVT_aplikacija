@@ -9,7 +9,6 @@ import { diskStorage } from "multer";
 import { RecipeImageService } from "src/services/recipe-image/recipe-image.service";
 import { RecipeImage } from "src/entities/recipe-image.entity";
 import { ApiResponse } from "src/misc/api.response.class";
-import { request } from "express";
 import * as fileType from 'file-type';
 import * as fs from 'fs';
 import * as sharp from 'sharp';
@@ -38,7 +37,10 @@ import { RecipeSearchDto } from "src/dtos/recipe/recipe.search.dto";
             },
             ingredients: {
                 eager: true
-            }
+            },
+            category: {
+                eager: true
+            },
             
             
         }
@@ -174,7 +176,7 @@ export class RecipeController {
             .toFile(destinationFilePath);
     };
 
-    // http://localhost:3000/api/recipe/1/deletePhoto/45/
+    // http://localhost:3000/api/recipe/4/deletePhoto/2/
     @Delete(':recipeId/deletePhoto/:photoId/') 
     public async deletePhoto(
         @Param('recipeId') recipeId: number,

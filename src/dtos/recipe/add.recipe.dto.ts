@@ -14,7 +14,7 @@ export class AddRecipeDto {
 
     @Validator.IsNotEmpty()
     @Validator.IsString()
-    @Validator.Length(16, 10000)
+    @Validator.Length(1, 30000)
     instructions: string;
 
     @Validator.IsArray()
